@@ -34,13 +34,13 @@ void Widget::on_pushButton_2_clicked()
     }
     file.open(QIODevice::ReadOnly);
     if (!file.isOpen()) {
-        QMessageBox::information(this, "error" , "file open file");
+        QMessageBox::information(this, "error" , "file open fail");
         return;
     }
     QFile fileToWrite(ui->dest->text());
     fileToWrite.open(QIODevice::WriteOnly);
-    if(!file.isOpen()) {
-
+    if(!fileToWrite.isOpen()) {
+        QMessageBox::information(this, "error", "dest file open fail");
     }
     QByteArray arrHead = file.read(1);
     int bitIdx = arrHead[0]  & 0x07;
