@@ -51,6 +51,5 @@ void Widget::on_pushButton_2_clicked()
         QByteArray arr = file.read(300);
 
     }
-
 }
 
